@@ -14,7 +14,7 @@ snippet mt
 	sett.meta.ncpus=${1:24}
 	sett.meta.mem='${2:96}gb'
 	sett.meta.time='${3:12:00:00}'
-	`!p import subprocess
+	`! import subprocess
 	hostname = subprocess.run('hostname', encoding = 'utf-8',
 			   stdout = subprocess.PIPE).stdout[:-1]
 	if 'gadi' in hostname:
