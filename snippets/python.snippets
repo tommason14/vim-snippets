@@ -14,16 +14,13 @@ snippet mt
 	sett.meta.ncpus=${1:24}
 	sett.meta.mem='${2:96}gb'
 	sett.meta.time='${3:12:00:00}'
-	# python call to hostname
 	`!p import subprocess
 	hostname = subprocess.run('hostname', encoding = 'utf-8',
 			   stdout = subprocess.PIPE).stdout[:-1]
 	if 'gadi' in hostname:
 		snip.rv += "sett.meta.partition='${4:normal}\n'"
-		snip.rv += "sett.meta.jobfs='${5:200}gb'"`
-	# if 'stampede' in hostname:
-	# 	snip.rv += "sett.meta.partition='${4:normal}\n'"
-	# 	snip.rv += "sett.meta.jobfs='${5:200}gb'"	
+		snip.rv += "sett.meta.jobfs='${5:200}gb'"
+	`
 snippet mg
 	sett.meta.ncpus=${1:24}
 	sett.meta.mem='${2:96}gb'
