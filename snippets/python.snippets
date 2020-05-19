@@ -14,9 +14,10 @@ snippet mt
 	sett.meta.ncpus=${1:24}
 	sett.meta.mem='${2:96}gb'
 	sett.meta.nodemem='${3:96}gb'
-	sett.meta.time='${4:12:00:00}'
-	sett.meta.partition='${5:normal}'
-	sett.meta.jobfs='${6:200}gb'
+	sett.meta.nodes=${4:1}
+	sett.meta.time='${5:12:00:00}'
+	sett.meta.partition='${6:normal}'
+	sett.meta.jobfs='${7:200}gb'
 snippet np
 	import numpy as np
 snippet pd
@@ -38,8 +39,9 @@ snippet #!
 snippet #!2
 	#!/usr/bin/env python2
 	# -*- coding: utf-8 -*-
-snippet #!3
-	#!/usr/bin/env python3
+snippet noargs
+	if len(sys.argv) != 2:
+		sys.exit(f'Syntax: {os.path.basename(__file__)} ${1:filename.ext}')
 snippet imp
 	import ${0:module}
 snippet uni
