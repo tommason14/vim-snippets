@@ -79,7 +79,11 @@ endsnippet
 #########
 # DATES #
 #########
-snippet date "YYYY-MM-DD" w
+snippet date "DD-MM-YYYY" w
+`!v strftime("%d-%m-%Y")`
+endsnippet
+
+snippet american_date "YYYY-MM-DD" w
 `!v strftime("%Y-%m-%d")`
 endsnippet
 
