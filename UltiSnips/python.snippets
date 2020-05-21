@@ -1,5 +1,85 @@
 priority -50
 
+snippet au
+from autochem import ${0:blah}
+endsnippet
+
+snippet as
+from autochem import Settings
+endsnippet
+
+snippet gj
+GaussJob('${0:xyz}', settings=sett)
+endsnippet
+
+snippet gaj
+GamessJob('${1:xyz}', fmo=${2:True}, settings=sett)
+endsnippet
+
+snippet pj
+PsiJob('${0:xyz}', settings=sett)
+endsnippet
+
+snippet oj
+OrcaJob('${0:xyz}', settings=sett)
+endsnippet
+
+snippet mt
+sett.meta.ncpus=${1:24}
+sett.meta.mem='${2:96}gb'
+sett.meta.nodemem='${3:96}gb'
+sett.meta.nodes=${4:1}
+sett.meta.time='${5:12:00:00}'
+sett.meta.partition='${6:normal}'
+sett.meta.jobfs='${7:200}gb'
+endsnippet
+
+snippet np
+import numpy as np
+endsnippet
+
+snippet pd
+import pandas as pd
+endsnippet
+
+snippet plt
+import matplotlib.pyplot as plt
+endsnippet
+
+snippet sns
+import seaborn as sns
+endsnippet
+
+snippet nt
+from collections import namedtuple
+endsnippet
+
+snippet gl
+from glob import glob
+endsnippet
+
+snippet df
+from dfply import *
+endsnippet
+
+snippet pn
+from plotnine import *
+endsnippet
+
+snippet #!
+#!/usr/bin/env python3
+endsnippet
+
+snippet #!2
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+endsnippet
+
+snippet noargs
+if len(sys.argv) != 2:
+	sys.exit(f'Syntax: {os.path.basename(__file__)} ${1:filename.ext}')
+endsnippet
+
 ###########################################################################
 #                            TEXTMATE SNIPPETS                            #
 ###########################################################################
