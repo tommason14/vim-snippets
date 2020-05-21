@@ -29,7 +29,11 @@ snippet #!
 #!/bin/sh
 endsnippet
 
-snippet #!b "#!/usr/bin/env (!env)" b
+snippet #!b
+#!/usr/bin/env bash
+endsnippet
+
+snippet #!e "#!/usr/bin/env (!env)" b
 `!p snip.rv = '#!/usr/bin/env ' + getShell() + "\n" `
 endsnippet
 
