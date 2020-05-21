@@ -9,6 +9,6 @@ snippet ref
 	\@ref($1)
 
 snippet fig
-	```{r, fig.cap="$1", fig.dim=c(${2:5,4}), fig.id="$3"}
+	\`\`\`\{r, fig.cap="$1", fig.dim=c(${2:5,4}), fig.id="$3"\}
 	knitr::include_graphics($4)
-	```
+	\`\`\`
