@@ -15,3 +15,16 @@ snippet tbl
 	$3    | $4
 	:---: | :---:
 	$5    | $6
+
+snippet latbl
+	\begin{table}[h]
+		\caption{$1}
+		\label{$2}
+		\begin{tabular}{| c | c |}
+			\hline
+				${3:col1} & ${4:col2} \\
+			\hline
+			${5:item1} & ${6:item2} \\
+			\hline
+		\end{tabular}
+	\end{table}
