@@ -1,35 +1,35 @@
-extends markdown
-
-# only looks in markdown.snippets of this directory, not
-# ../Ultisnips/markdown.snippets
-
-snippet eq
-	\\begin{equation}
-		$1
-	\\end{equation}
-
-snippet ref
-	[@$1]
-
-snippet fig
-	![$1]($2){width=${3:10cm} ${4:height=10cm} #fig:$5}
-
-snippet table
-	Table: $1 {#tbl:$2}
-
-	$3    | $4
-	:---: | :---:
-	$5    | $6
-
-snippet latbl
-	\begin{table}[h]
-		\caption{$1}
-		\label{$2}
-		\begin{tabular}{| c | c |}
-			\hline
-				${3:col1} & ${4:col2} \\\\
-			\hline
-			${5:item1} & ${6:item2} \\\\
-			\hline
-		\end{tabular}
-	\end{table}
+# extends markdown
+#
+# # only looks in markdown.snippets of this directory, not
+# # ../Ultisnips/markdown.snippets
+#
+# snippet eq
+# 	\\begin{equation}
+# 		$1
+# 	\\end{equation}
+#
+# snippet ref
+# 	[@$1]
+#
+# snippet fig
+# 	![$1]($2){width=${3:10cm} ${4:height=10cm} #fig:$5}
+#
+# snippet table
+# 	Table: $1 {#tbl:$2}
+#
+# 	$3    | $4
+# 	:---: | :---:
+# 	$5    | $6
+#
+# snippet latbl
+# 	\begin{table}[h]
+# 		\caption{$1}
+# 		\label{$2}
+# 		\begin{tabular}{| c | c |}
+# 			\hline
+# 				${3:col1} & ${4:col2} \\\\
+# 			\hline
+# 			${5:item1} & ${6:item2} \\\\
+# 			\hline
+# 		\end{tabular}
+# 	\end{table}
