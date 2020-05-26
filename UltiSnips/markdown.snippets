@@ -83,8 +83,8 @@ def create_table_latex(snip):
 	final_str += "\t\t\\hline\n"
 	final_str += old_spacing + "\t\\end{tabular}\n"
 	# caption and label
-	final_str += old_spacing + "\t\\caption{'$' + str(cols * rows + offset + 1)}\n"
-	final_str += old_spacing + "\t\\label{'$' + str(cols * rows + offset + 2)}\n"
+	final_str += old_spacing + "\t\\caption{$" + str(cols * rows + offset + 1) + "}\n"
+	final_str += old_spacing + "\t\\label{$" + str(cols * rows + offset + 2)} + "\n"
 	final_str += old_spacing + "\\end{table}\n$0"
 	
 
