@@ -64,20 +64,29 @@ def create_table_latex(snip):
 	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
 	
 	snip.buffer[snip.line] = ''
-	
-	final_str = old_spacing + "\\begin{tabular}{|" + "|".join(['${' + str(i + 1) + ':c}' for i in range(cols)]) + "|}\n"
 
-	final_str += "\\hline\n"
+	# define centred table
+	final_str = old_spacing + "\\begin{table}[h]\n"
+	final_str = old_spacing + "\t\\centering\n"
+	
+	final_str = old_spacing + "\t\\begin{tabular}{|" + "|".join(['${' + str(i + 1) + ':c}' for i in range(cols)]) + "|}\n"
+
+	final_str += "\t\t\\hline\n"
 
 	# for first line add a hline
 	for idx, i in enumerate(range(rows)):
-		final_str += old_spacing + '\t'
+		final_str += old_spacing + '\t\t'
 		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
 		final_str += " \\\\\\\n"
 		if idx == 0:
-			final_str += "\\hline\n"
-
-	final_str += old_spacing + "\\end{tabular}\n$0"
+			final_str += "\t\t\\\hline\n"
+	final_str += "\t\t\\hline\n"
+	final_str += old_spacing + "\t\\end{tabular}\n"
+	# caption and label
+	final_str += old_spacing + "\t\\caption{'$' + str(cols * rows + offset + 1)}\n$0"
+	final_str += old_spacing + "\t\\label{'$' + str(cols * rows + offset + 2}\n"
+	final_str += old_spacing + "\\end{table}\n$0"
+	
 
 	snip.expand_anon(final_str)
 
