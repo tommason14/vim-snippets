@@ -2,38 +2,3 @@ extends markdown
 
 # only looks in markdown.snippets of this directory, not
 # ../Ultisnips/markdown.snippets
-
-# snippet eq
-# 	\\begin{equation}
-# 		$1
-# 	\\end{equation}
-
-snippet ref
-[@$1]
-endsnippet
-
-snippet fig
-![$1]($2){width=${3:10cm} ${4:height=10cm} #fig:$5}
-endsnippet
-
-snippet table
-Table: $1 {#tbl:$2}
-
-$3    | $4
-:---: | :---:
-$5    | $6
-endsnippet
-
-snippet latbl
-\begin{table}[h]
-	\caption{$1}
-	\label{tbl:$2}
-	\begin{tabular}{| c | c |}
-		\hline
-			${3:col1} & ${4:col2} \\\\
-		\hline
-		${5:item1} & ${6:item2} \\\\
-		\hline
-	\end{tabular}
-\end{table}
-endsnippet
