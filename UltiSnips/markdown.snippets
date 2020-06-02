@@ -184,7 +184,7 @@ snippet fnt "Footnote"
 endsnippet
 
 post_jump "create_table(snip)"
-snippet "tb([1-9][1-9])" "Fancy table" br
+snippet "tbl([1-9][1-9])" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
@@ -205,6 +205,14 @@ snippet table "Table environment" b
 	$0${5/(?<=.)(c|l|r)|./(?1: & )/g}
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table}
+endsnippet
+
+snippet ref
+[@$1]
+endsnippet
+
+snippet fig
+![$1]($2){width=${3:10cm} ${4:height=10cm} #fig:$5}
 endsnippet
 
 # vim:ft=snippets:
