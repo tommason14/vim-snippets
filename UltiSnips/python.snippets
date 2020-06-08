@@ -1,5 +1,26 @@
 priority -50
 
+snippet data
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from IPython import get_ipython
+get_ipython().magic("matplotlib inline")
+get_ipython().magic("%config InlineBackend.figure_format = 'retina'")
+endsnippet
+
+snippet dapipe
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from IPython import get_ipython
+get_ipython().magic("matplotlib inline")
+get_ipython().magic("%config InlineBackend.figure_format = 'retina'")
+from dfply import *
+endsnippet
+
 snippet pa
 parser.add_argument('--$1', '-$2', help='$3')
 endsnippet
