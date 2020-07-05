@@ -308,8 +308,17 @@ def write_numpy_docstring_args(args, snip):
 			snip += format_arg(kwarg, NUMPY) + ', optional'
 	snip.rv += '\n' + snip.mkline('', indent='')
 
-
 def write_init_body(args, parents, snip):
+	parents = [p.strip() for p in parents.split(",")]
+	snip += "super().__init__(self)"
+
+	if parents:
+		snip.rv += '\n' + snip.mkline('', indent='')
+
+	for arg in filter(lambda arg: not arg.is_vararg(), args):
+		snip += "self._%s = %s" % (arg, arg)
+
+def write_init_body2(args, parents, snip):
 	parents = [p.strip() for p in parents.split(",")]
 	parents = [p for p in parents if p != 'object']
 
@@ -403,7 +412,7 @@ if args:
 	snip.rv += '\n' + snip.mkline('', indent='')
 	snip += '{0}'.format(triple_quotes(snip))
 
-write_init_body(args, t[2], snip)
+write_init_body2(args, t[2], snip)
 `
 		$0
 endsnippet
