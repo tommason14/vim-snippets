@@ -411,10 +411,10 @@ endsnippet
 snippet classi "inheritance class with docstrings" b
 class ${1:MyClass}(${2:Obj}):
 
-	`!p snip.rv = triple_quotes(snip)`${2:Docstring for $1.}`!p snip.rv = triple_quotes(snip)`
+	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1.}`!p snip.rv = triple_quotes(snip)`
 
-	def __init__(self$3):
-		`!p snip.rv = triple_quotes(snip)`${4:TODO: to be defined.}`!p
+	def __init__(self$4):
+		`!p snip.rv = triple_quotes(snip)`${5:TODO: to be defined.}`!p
 snip.rv = ""
 snip >> 2
 
