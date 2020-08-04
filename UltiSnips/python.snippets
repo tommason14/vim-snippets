@@ -314,6 +314,15 @@ def write_numpy_docstring_args(args, snip):
 
 def write_init_body(args, parents, snip):
 	parents = [p.strip() for p in parents.split(",")]
+
+	if parents:
+		snip.rv += '\n' + snip.mkline('', indent='')
+
+	for arg in filter(lambda arg: not arg.is_vararg(), args):
+		snip += "self._%s = %s" % (arg, arg)
+
+def write_init_body_inheritance(args, parents, snip):
+	parents = [p.strip() for p in parents.split(",")]
 	snip += "super().__init__(self)"
 
 	if parents:
@@ -395,6 +404,28 @@ if args:
 	snip += '{0}'.format(triple_quotes(snip))
 
 write_init_body(args, t[1], snip)
+`
+		$0
+endsnippet
+
+snippet classi "inheritance class with docstrings" b
+class ${1:MyClass}(${2:Obj}):
+
+	`!p snip.rv = triple_quotes(snip)`${2:Docstring for $1.}`!p snip.rv = triple_quotes(snip)`
+
+	def __init__(self$3):
+		`!p snip.rv = triple_quotes(snip)`${4:TODO: to be defined.}`!p
+snip.rv = ""
+snip >> 2
+
+args = get_args(t[3])
+
+write_docstring_args(args, snip)
+if args:
+	snip.rv += '\n' + snip.mkline('', indent='')
+	snip += '{0}'.format(triple_quotes(snip))
+
+write_init_body_inheritance(args, t[1], snip)
 `
 		$0
 endsnippet
