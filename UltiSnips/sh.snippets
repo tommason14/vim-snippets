@@ -33,6 +33,16 @@ snippet #!b
 #!/usr/bin/env bash
 endsnippet
 
+###########
+#  slurm  #
+###########
+
+snippet mail
+#SBATCH --job-name=$1
+#SBATCH --mail-user=thomas.mason1@monash.edu
+#SBATCH --mail-type=all
+endsnippet
+
 snippet #!e "#!/usr/bin/env (!env)" b
 `!p snip.rv = '#!/usr/bin/env ' + getShell() + "\n" `
 endsnippet
